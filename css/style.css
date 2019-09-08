@@ -1,0 +1,77 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    height: 150px;
+    background-color: darkgrey;
+    margin-bottom: 0;
+}
+
+header img {
+    max-width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+nav {
+    background-color: black;
+    width: 15px;
+    height: 15px;
+    margin: 3px;
+    padding: 10px;
+    position: absolute;
+    color: white;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+}
+
+nav:hover {
+    background-color: orangered;
+}
+
+nav input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+}
+
+nav i {
+    text-align:center;
+    width: 100%;
+}
+
+#pilote {
+    position: relative;
+    top: 30%;
+    background-image: url("../img/pilote_noir_blanc.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 66%;
+}
+
+#liens a {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+#liens {
+    display: none;
+    background-color: darkgrey;
+    transition: all 3s ease;
+}
+
+nav input:checked #liens {
+    display: visible;
+}
+
+
+
