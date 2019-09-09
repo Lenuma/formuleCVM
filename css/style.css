@@ -10,6 +10,12 @@ header {
     margin-bottom: 0;
 }
 
+header>div:first-of-type {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
 header img {
     max-width: 100px;
     position: absolute;
@@ -23,10 +29,7 @@ nav {
     height: 15px;
     margin: 3px;
     padding: 10px;
-    position: absolute;
     color: white;
-    top: 0;
-    right: 0;
     border-radius: 5px;
 }
 
@@ -34,13 +37,14 @@ nav:hover {
     background-color: orangered;
 }
 
-nav input {
+input {
     opacity: 0;
     position: absolute;
     top: 0;
     right: 0;
-    width: 15px;
-    height: 15px;
+    width: 37px;
+    height: 37px;
+    margin: 0;
 }
 
 nav i {
@@ -49,8 +53,6 @@ nav i {
 }
 
 #pilote {
-    position: relative;
-    top: 30%;
     background-image: url("../img/pilote_noir_blanc.JPG");
     background-repeat: no-repeat;
     background-size: cover;
@@ -64,14 +66,12 @@ nav i {
 }
 
 #liens {
-    display: none;
-    background-color: darkgrey;
+    max-height: 0; /*Pour le cacher au repos*/
+	overflow: hidden; /*Le contenu qui dépasse de 0 est caché*/
     transition: all 3s ease;
+    color: white;
 }
 
-nav input:checked #liens {
-    display: visible;
+input:checked~#liens {
+    max-height: 100px;
 }
-
-
-
