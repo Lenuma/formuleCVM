@@ -4,6 +4,8 @@
     margin: 0;
 }
 
+
+
 header {
     height: 150px;
     background-color: darkgrey;
@@ -90,4 +92,7 @@ section {
     text-align: center;
 }
 
+ul {
+    margin-left: 1rem;
+}
 
