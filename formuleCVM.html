@@ -23,13 +23,14 @@
             <a href="#equipe">Équipe</a>
             <a href="#partenaires">Partenaires</a>
         </div>
-        <div id="pilote"></div>
+        <div id="pilote">a</div>
     </header>
     <main>
         <section id="information" class="dark">
-            <i class="fa fa-question-circle-o fa-3x"></i>
+            <i class="fa fa-question-circle-o fa-3x" aria-hidden="true"></i>
             <h1>Information</h1>
             <h3>SAE</h3>
+            <input type="checkbox">
             <article>
                 <p>La société regroupe aujourd’hui des ingénieurs,
                     administrateurs, éducateurs et étudiants. Ces derniers
@@ -40,8 +41,9 @@
                     l’avancement des technologies du transport pour l’évolution de
                     notre société.
                 </p>
-                <button>Plus d'info</button>
+                <button class="button"><label for="">Plus d'info</label></button>
             </article>
+            
             <aside>
                 <h3>Compétition</h3>
                 <p>L’évènement auquel nous participons fait partie de la série de
@@ -77,6 +79,7 @@
 
         </section>
         <section id="equipe" class="light">
+                <i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i>
             <h1>Équipe</h1>
             <h3>Charles Fischer</h3>
             <p>Enseignant | coordonnateur Formule SAE <br>Départements de technique de génie mécanique</p>
