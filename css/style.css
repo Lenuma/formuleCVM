@@ -90,13 +90,13 @@ input:checked~div>nav {
 
 /*Main*/
 
-#information {
+#information, #partenaires {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#information>aside {
+aside {
     max-height: 0; /*Pour le cacher au repos*/
 	overflow: hidden; /*Le contenu qui dépasse de 0 est caché*/
     transition: all 1s linear;
@@ -107,6 +107,15 @@ input:checked~div>nav {
     opacity: 0;
     position: absolute;
     top: 478px;
+    width: 139px;
+    height: 48px;
+    margin: 0 auto;
+}
+
+#partenaires>input {
+    opacity: 0;
+    position: absolute;
+    top: 1078px;
     width: 139px;
     height: 48px;
     margin: 0 auto;
