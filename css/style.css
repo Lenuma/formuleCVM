@@ -14,15 +14,20 @@
     src: url("../font/Quicksand-Bold.ttf");
 }
 
+/*Technique prise sur le site 
+https://css-tricks.com/the-image-replacement-museum/
+qui répertorie différentes techniques de remplacement.
+La technique utilisée dans ce cas-ci se nomme 
+"H5BP Image Replacement 2"*/
 h1.cache {
     border: 0;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
 h1, h3 {
@@ -126,7 +131,10 @@ input:checked~div>nav {
     align-items: center;
 }
 
-#partenaires, #media {
+/*Ces divs sont relatives afin que les inputs invisibles en position absolute
+(au-dessus des boutons "Plus d'info") que l'on postionne en %, le soient par rapport 
+à leur parent et non au body */
+#information, #partenaires, #media {
     position: relative;
 }
 
@@ -140,12 +148,13 @@ aside {
 #information>input {
     opacity: 0;
     position: absolute;
-    top: 526px;
+    top: 85%;
     width: 139px;
     height: 48px;
     margin: 0 auto;
 }
 
+/*On ne veut pas display toutes les images sur la version mobile*/
 #information article img {
     display: none;
 }
@@ -154,6 +163,13 @@ aside {
     display: none;
 }
 
+#partenaires>aside>ul>img {
+    max-height: 0; /*Pour le cacher au repos*/
+	overflow: hidden;
+}
+#partenaires>aside>ul>li {
+    padding-right: 1em;
+}
 #partenaires>input {
     opacity: 0;
     position: absolute;
@@ -163,6 +179,7 @@ aside {
     margin: 0 auto;
 }
 
+/*Ouverture du div aside après avoir cliqué sur le bouton "PLus d'info"*/
 #information>input:checked~aside {
     max-height: 100%;
 }
@@ -171,10 +188,24 @@ aside {
     max-height: 100%;
 }
 
-#partenaires>input:checked {
-    top: 30%;
+#media>input:checked~aside {
+    max-height: 100%;
 }
 
+/*Réajustement du input invisible après l'ouverture du div aside*/
+#information>input:checked {
+    top: 25.5%;
+}
+
+#partenaires>input:checked {
+    top: 28.25%;
+}
+
+#media>input:checked {
+    top: 45.5%;
+}
+
+/*Classes pour alterner la couleur du background des sections principales*/
 .dark {
     background-image: linear-gradient(black,#262626);
 }
@@ -244,8 +275,6 @@ p {
       margin-top: 1rem;
 }
 
-
-
 #media>input {
     opacity: 0;
     position: absolute;
@@ -253,14 +282,6 @@ p {
     width: 139px;
     height: 48px;
     margin: 0 auto;
-}
-
-#media>input:checked~aside {
-    max-height: 100%;
-}
-
-#media>input:checked {
-    top: 45.5%;
 }
 
 #media aside iframe:nth-of-type(3){
@@ -347,7 +368,16 @@ p {
         display: grid;
     }
 
+    /*On supprime les boutons dans la version grand écran*/
     #information article button {
+        display: none;
+    }
+
+    #partenaires article button{
+        display: none;
+    }
+
+    #media article button{
         display: none;
     }
 
@@ -411,21 +441,26 @@ p {
         text-align: center;
     }
 
-    #partenaires article button{
-        display: none;
-    }
-
     #partenaires aside {
         max-height: 100%;
+    }
+
+    #partenaires>aside>ul>img {
+        max-height: 100%;
+        float: left;
+        margin: 1em;
+    }
+    #partenaires>aside>p:first-of-type {
+        clear: both;
+    }
+    
+    #partenaires>aside>ul:first-of-type>li{
+        text-align: left;
     }
 
     #photos {
         width: 50%;
         height: 350px;
-    }
-
-    #media article button{
-        display: none;
     }
 
     #media aside {
